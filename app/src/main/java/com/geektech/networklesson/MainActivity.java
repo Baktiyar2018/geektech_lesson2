@@ -6,9 +6,9 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.geektech.networklesson.base.callback.JsonCallback;
 import com.geektech.networklesson.model.DogModel;
 import com.geektech.networklesson.network.NetworkService;
-import com.geektech.networklesson.network.ResponseCallback;
 
 import org.json.JSONObject;
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         String url = "http://www.mocky.io/v2/5bbcc2cd3200007c0027ee46";
         NetworkService
                 .getInstance(getApplicationContext())
-                .getJson(url, new ResponseCallback<JSONObject>() {
+                .getJson(url, new JsonCallback() {
                     @Override
                     public void onSuccess(JSONObject result) {
                         DogModel dog = DogModel.fromJson(result);

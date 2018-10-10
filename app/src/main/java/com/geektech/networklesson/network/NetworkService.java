@@ -9,6 +9,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.geektech.networklesson.base.callback.JsonCallback;
+import com.geektech.networklesson.base.callback.StringCallback;
 
 import org.json.JSONObject;
 
@@ -38,7 +40,7 @@ public class NetworkService implements NetworkServiceContract {
     //region Contract
 
     @Override
-    public void getJson(String url, final ResponseCallback<JSONObject> callback) {
+    public void getJson(String url, final JsonCallback callback) {
         JsonObjectRequest jsonRequest =
                 new JsonObjectRequest(
                         Request.Method.GET,
@@ -61,7 +63,7 @@ public class NetworkService implements NetworkServiceContract {
     }
 
     @Override
-    public void getString(String url, final ResponseCallback<String> callback) {
+    public void getString(String url, final StringCallback callback) {
         StringRequest stringRequest = new StringRequest (
                 Request.Method.GET, url,
                 new Response.Listener<String>() {

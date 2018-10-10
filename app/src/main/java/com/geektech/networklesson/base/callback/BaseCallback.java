@@ -1,7 +1,7 @@
-package com.geektech.networklesson.network;
+package com.geektech.networklesson.base.callback;
 
 // Created by askar on 10/9/18.
-public interface ResponseCallback<T> {
+public interface BaseCallback<T> {
     void onSuccess(T result);
 
     void onFail(String message);
