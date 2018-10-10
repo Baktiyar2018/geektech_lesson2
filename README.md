@@ -1,4 +1,4 @@
-# Android Level 2 Lesson 2 - Network Basics
+# Android Level 2 Lesson 2 - Network
 
 ##### AndroidStudio 3.2+
 
